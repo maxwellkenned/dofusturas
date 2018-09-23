@@ -1,0 +1,122 @@
+<div class="row">
+    <div *ngIf="monturaslistas">
+        <div class="col s4">
+            <div class="card-panel">
+                <form (ngSubmit)="addDragopavos(dragopavoForm)" #dragopavoForm="ngForm">
+                    <div class="input-field col s12">
+                        <input id="nombre" type="text" class="validate" name="nombre" #nombre="ngModel" [(ngModel)]="monturasService.selectedMontura.nombre" required>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="reproducciones" type="number" class="validate" name="reproducciones" #reproducciones="ngModel" [(ngModel)]="monturasService.selectedMontura.reproducciones" required>
+                        <label for="reproducciones">Reproducciones</label>
+                    </div>
+                    <input type="hidden" name="fecundada" #fecundada="ngModel" [(ngModel)]="fecundidad" required>
+                    <div class="input-field col s12">
+                        <select class="icons" name="especie" #especie="ngModel" [(ngModel)]="monturasService.selectedMontura.especie" required>
+                          <option value="" disabled selected>Selecione una especie</option>
+                          <option [value]="dragopavo.dragopavo" *ngFor="let dragopavo of dragopavos" [attr.data-icon]="dragopavo.img"> 
+                              {{ dragopavo.dragopavo }} 
+                          </option>
+                        </select>
+                        <label>Especies</label>
+                    </div>
+                    <input type="hidden" name="img" #img="ngModel" [(ngModel)]="monturasService.selectedMontura.img" [value]="">
+                    <div class="input-field col s12">
+                        <select name="ubicacion" #ubicacion="ngModel" [(ngModel)]="monturasService.selectedCercado.ubicacion" required>
+                          <option value="" disabled selected>Elija una ubicacion</option>
+                          <option value="inventario"> Inventario </option>
+                          <option [value]="k" *ngFor="let k of monturasService.cercados | keys "> {{monturasService.cercados[k].ubicacion}} </option>
+                        </select>
+                        <label>Ubicacion</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select name="propietario" #propietario="ngModel" [(ngModel)]="monturasService.selectedMontura.propietario" required>
+                          <option value="" disabled selected>Elija un propietario</option>
+                          <option [value]="k" *ngFor="let k of monturasService.usuarios | keys"> {{ monturasService.usuarios[k].nombre }} </option>
+                      </select>
+                        <label>Propietario</label>
+                    </div>
+                    <div class="center-align">
+                        <button [disabled]="!dragopavoForm.valid" type="submit" class="btn cyan darken-4 waves-effect waves-light" [disabled]="guardando">
+                          <a style="color:white" *ngIf="!guardando" >Guardar</a>
+                          <a style="color:white" *ngIf="guardando" >Guardando</a>
+                      </button>
+                    </div>
+                </form>
+                <br>
+                <div class="center-align" *ngIf="guardando">
+                    <div class="preloader-wrapper small active">
+                        <div class="spinner-layer spinner-green-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s8">
+            <div class="card-panel">
+                <div class="col s4 offset-s4" *ngIf="eliminando">
+                    <div class="progress red">
+                        <div class="indeterminate red lighten-5"></div>
+                    </div>
+                </div>
+                <div class="col s4 offset-s4" *ngIf="cargando">
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                </div>
+                <table class="responsive-table highlight">
+                    <thead>
+                        <tr>
+                            <th class="center-align" title="Número">Nro</th>
+                            <th class="center-align" title="Nombre">Nombre</th>
+                            <th class="center-align" title="Reproducciones">Repro</th>
+                            <th class="center-align" title="Especie">Especie</th>
+                            <th class="center-align" title="Ubicación">Ubicación</th>
+                            <th class="center-align" title="Acciones">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let k1 of monturasService.monturas | keys; let i=index">
+                            <td class="center-align"> {{ i+1 }} </td>
+                            <td class="center-align"> {{ monturasService.monturas[k1].nombre}} </td>
+                            <td class="center-align"> {{ monturasService.monturas[k1].reproducciones}} </td>
+                            <td class="center-align"> {{ monturasService.monturas[k1].especie}} </td>
+                            <td class="center-align" *ngIf="monturasService.monturas[k1].ubicacion != 'inventario'">
+                                <div *ngFor="let k2 of monturasService.cercados | keys">
+                                    <p *ngIf="k2 == monturasService.monturas[k1].ubicacion">{{ monturasService.cercados[k2].ubicacion }}</p>
+                                </div>
+                            </td>
+                            <td class="center-align" *ngIf="monturasService.monturas[k1].ubicacion == 'inventario'">
+                                <div *ngFor="let k3 of monturasService.usuarios | keys">
+                                    <p *ngIf="k3 == monturasService.monturas[k1].propietario">Inventario: {{ monturasService.usuarios[k3].nombre }}&nbsp;{{ monturasService.usuarios[k3].apellido }}</p>
+                                </div>
+                            </td>
+                            <td class="center-align">
+                                <a class="waves-effect waves-light btn-small tooltipped" data-position="bottom" data-tooltip="Ver dragopavo" [routerLink]="['/montura/dragopavo', k1 ]"><i class="fa fa-eye"></i></a>
+                                <a class="waves-effect waves-light btn-small green tooltipped" data-position="bottom" data-tooltip="Ver árbol genealógico"><i class="fa fa-sitemap"></i></a>
+                                <a class="waves-effect waves-light btn-small red tooltipped" data-position="bottom" data-tooltip="Eliminar dragopavo" (click)="borraDragopavo(k1)"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col s12" *ngIf="!monturaslistas">
+    <div class="col s4 offset-s4">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+</div>

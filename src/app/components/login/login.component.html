@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="row" id="fondo"></div>
+    <div id="particles-js"></div>
+    <div class="container center-align formulario">
+        <div class="col s12 m6 offset-m3" style="margin-top: 10%">
+            <div class="card-panel">
+                <form (ngSubmit)="tryLogin(loginForm)" #loginForm="ngForm">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" name="email" #email="ngModel" [(ngModel)]="usuario.email">
+                        <label for="email">Correo Electrónico</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" name="password" #password="ngModel" [(ngModel)]="usuario.password">
+                        <label for="password">Contraseña</label>
+                    </div>
+                    <div *ngIf="monturasService.errorconexionsesion && !loginForm.valid">
+                        <div class="center-align">
+                            <img src="../../../assets/img/timeout.png" width="50px">
+                        </div>
+                        <span class="badge red left col s10 offset-s1" style="margin-bottom:20px; color:white;">Error de conexion - Intente de nuevo</span>
+                    </div>
+                    <div *ngIf="monturasService.usuarionoecontrado && !loginForm.valid">
+                        <div class="center-align">
+                            <img src="../../../assets/img/error.png" width="50px">
+                        </div>
+                        <span class="badge red left col s10 offset-s1" style="margin-bottom:20px; color:white;">Usuario no encontrado</span>
+                    </div>
+                    <button type="submit" class="btn cyan darken-4 waves-effect waves-light" [disabled]="guardando">
+                        <a style="color:white" *ngIf="!guardando" >Iniciar Sesión</a>
+                        <a style="color:white" *ngIf="guardando" >Iniciando Sesión</a>
+                    </button>
+                </form>
+                <br>
+                <div class="center-align" *ngIf="guardando">
+                    <div class="preloader-wrapper small active">
+                        <div class="spinner-layer spinner-green-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

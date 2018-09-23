@@ -1,0 +1,328 @@
+<div class="col s12 container" *ngIf="!cercadolisto" style="margin-top:30px">
+    <div class="col s4 offset-s4">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="cercadolisto" style="margin-top:10px">
+    <div class="col s4">
+        <div class="col s12">
+            <div class="card-panel cyan darken-4">
+                <div class="white-text">
+                    <div class="center-align">
+                        <img src="../../../assets/img/iconcercado.png" alt="">
+                        <h5> {{ monturasService.selectedCercado.nombre }} </h5>
+                    </div>
+                    <div>
+                        <ul class="">
+                            <hr>
+                            <li class=""><b>Ubicación: </b>{{ monturasService.selectedCercado.ubicacion }}</li>
+                            <hr>
+                            <li class=""><b>Tipo: </b>{{ monturasService.selectedCercado.tipo }}</li>
+                            <!-- <hr>
+                            <li class=""><b>Propietario: </b>{{ monturasService.selectedCercado.propietario }}</li> -->
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="center-align" style="margin-top:20px">
+                        <a class="waves-effect waves-light btn-small red tooltipped" data-position="bottom" data-tooltip="Eliminar cercado" (click)="borracercado()"><i class="fa fa-trash"></i> Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel cyan darken-4">
+                <div class="white-text center-align" style="margin-bottom:20px">
+                    <h6>Nueva Montura</h6>
+                </div>
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn-small green tooltipped modal-trigger" data-position="bottom" data-tooltip="Agregar dragopavo" href="#modalpavo" style="margin-right:20px"><i class="fa fa-plus"></i></a>
+                    <a class="waves-effect waves-light btn-small green tooltipped modal-trigger" data-position="bottom" data-tooltip="Agregar mulagua" href="#modalmula"><i class="fa fa-plus"></i></a>
+                    <a class="waves-effect waves-light btn-small green tooltipped modal-trigger" data-position="bottom" data-tooltip="Agregar vueloceronte" href="#modalvuelo" style="margin-left:20px"><i class="fa fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s8">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width tabs-transparent cyan darken-4">
+                            <li class="tab"><a href="#tabpavo">Dragopavo</a></li>
+                            <li class="tab"><a href="#tabmula">Mulagua</a></li>
+                            <li class="tab"><a href="#tabvuelo">Vueloceronte</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-content">
+                        <div class="col s4 offset-s4" *ngIf="eliminando">
+                            <div class="progress red">
+                                <div class="indeterminate red lighten-5"></div>
+                            </div>
+                        </div>
+                        <div class="col s4 offset-s4" *ngIf="!monturalista">
+                            <div class="progress">
+                                <div class="indeterminate"></div>
+                            </div>
+                        </div>
+                        <div id="tabpavo">
+                            <table class="responsive-table highlight">
+                                <thead>
+                                    <tr>
+                                        <th class="center-align" title="Nombre">Nombre</th>
+                                        <th class="center-align" title="Reproducciones">Repro</th>
+                                        <th class="center-align" title="Especie">Especie</th>
+                                        <th class="center-align" title="Acciones">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let k of dragopavos | keys">
+                                        <td class="center-align" *ngIf="key$ == dragopavos[k].ubicacion"> {{ dragopavos[k].nombre }} </td>
+                                        <td class="center-align" *ngIf="key$ == dragopavos[k].ubicacion"> {{ dragopavos[k].reproducciones }} </td>
+                                        <td class="center-align" *ngIf="key$ == dragopavos[k].ubicacion"> {{ dragopavos[k].especie }}</td>
+                                        <td class="center-align" *ngIf="key$ == dragopavos[k].ubicacion">
+                                            <a class="waves-effect waves-light btn-small tooltipped" data-position="bottom" data-tooltip="Ver dragopavo" [routerLink]="['/montura/dragopavo', k ]"><i class="fa fa-eye"></i></a>
+                                            <a class="waves-effect waves-light btn-small green tooltipped" data-position="bottom" data-tooltip="Ver árbol genealógico"><i class="fa fa-sitemap"></i></a>
+                                            <a class="waves-effect waves-light btn-small red tooltipped" data-position="bottom" data-tooltip="Eliminar dragopavo" (click)="borraDragopavo(k)"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tabmula">
+                            <table class="responsive-table highlight">
+                                <thead>
+                                    <tr>
+                                        <th class="center-align" title="Nombre">Nombre</th>
+                                        <th class="center-align" title="Reproducciones">Repro</th>
+                                        <th class="center-align" title="Especie">Especie</th>
+                                        <th class="center-align" title="Acciones">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let k of mulaguas | keys">
+                                        <td class="center-align" *ngIf="key$ == mulaguas[k].ubicacion"> {{ mulaguas[k].nombre }} </td>
+                                        <td class="center-align" *ngIf="key$ == mulaguas[k].ubicacion"> {{ mulaguas[k].reproducciones }} </td>
+                                        <td class="center-align" *ngIf="key$ == mulaguas[k].ubicacion"> {{ mulaguas[k].especie }}</td>
+                                        <td class="center-align" *ngIf="key$ == mulaguas[k].ubicacion">
+                                            <a class="waves-effect waves-light btn-small tooltipped" data-position="bottom" data-tooltip="Ver mulagua" [routerLink]="['/montura/mulagua', k ]"><i class="fa fa-eye"></i></a>
+                                            <a class="waves-effect waves-light btn-small green tooltipped" data-position="bottom" data-tooltip="Ver árbol genealógico"><i class="fa fa-sitemap"></i></a>
+                                            <a class="waves-effect waves-light btn-small red tooltipped" data-position="bottom" data-tooltip="Eliminar mulagua" (click)="borraMulagua(k)"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tabvuelo">
+                            <table class="responsive-table highlight">
+                                <thead>
+                                    <tr>
+                                        <th class="center-align" title="Nombre">Nombre</th>
+                                        <th class="center-align" title="Reproducciones">Repro</th>
+                                        <th class="center-align" title="Especie">Especie</th>
+                                        <th class="center-align" title="Acciones">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let k of vuelocerontes | keys">
+                                        <td class="center-align" *ngIf="key$ == vuelocerontes[k].ubicacion"> {{ vuelocerontes[k].nombre }} </td>
+                                        <td class="center-align" *ngIf="key$ == vuelocerontes[k].ubicacion"> {{ vuelocerontes[k].reproducciones }} </td>
+                                        <td class="center-align" *ngIf="key$ == vuelocerontes[k].ubicacion"> {{ vuelocerontes[k].especie }}</td>
+                                        <td class="center-align" *ngIf="key$ == vuelocerontes[k].ubicacion">
+                                            <a class="waves-effect waves-light btn-small tooltipped" data-position="bottom" data-tooltip="Ver vueloceronte" [routerLink]="['/montura/vueloceronte', k ]"><i class="fa fa-eye"></i></a>
+                                            <a class="waves-effect waves-light btn-small green tooltipped" data-position="bottom" data-tooltip="Ver árbol genealógico"><i class="fa fa-sitemap"></i></a>
+                                            <a class="waves-effect waves-light btn-small red tooltipped" data-position="bottom" data-tooltip="Eliminar vueloceronte" (click)="borraVueloceronte(k)"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalpavo" class="modal">
+    <div class="modal-content">
+        <div class="center-align">
+            <h5>Agregar Dragopavo&nbsp;<small>{{monturasService.selectedCercado.nombre}}</small></h5>
+        </div>
+        <div>
+            <form (ngSubmit)="addDragopavos(dragopavoForm)" #dragopavoForm="ngForm">
+                <div class="input-field col s12">
+                    <input id="nombre" type="text" class="validate" name="nombre" #nombre="ngModel" [(ngModel)]="monturasService.selectedMontura.nombre" required>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="reproducciones" type="number" class="validate" name="reproducciones" #reproducciones="ngModel" [(ngModel)]="monturasService.selectedMontura.reproducciones" required>
+                    <label for="reproducciones">Reproducciones</label>
+                </div>
+                <input type="hidden" name="fecundada" #fecundada="ngModel" [(ngModel)]="fecundidad">
+                <div class="input-field col s12">
+                    <select class="icons" name="especie" #especie="ngModel" [(ngModel)]="monturasService.selectedMontura.especie" required>
+                        <option value="" disabled selected>Selecione una especie</option>
+                        <option [value]="dragopavo.dragopavo" *ngFor="let dragopavo of dragopavosselect" [attr.data-icon]="dragopavo.img"> 
+                            {{ dragopavo.dragopavo }} 
+                        </option>
+                    </select>
+                    <label>Especies</label>
+                </div>
+                <input type="hidden" name="img" #img="ngModel" [(ngModel)]="monturasService.selectedMontura.img" [value]="">
+                <input type="hidden" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="key$">
+                <div class="input-field col s12">
+                    <select name="propietario" #propietario="ngModel" [(ngModel)]="monturasService.selectedMontura.propietario" required>
+                        <option value="" disabled selected>Elija un propietario</option>
+                        <option [value]="k" *ngFor="let k of monturasService.usuarios | keys"> {{ monturasService.usuarios[k].nombre }} </option>
+                    </select>
+                    <label>Propietario</label>
+                </div>
+                <div class="center-align">
+                    <button [disabled]="!dragopavoForm.valid" type="submit" class="btn cyan darken-4 waves-effect waves-light" [disabled]="guardando">
+                        <a style="color:white" *ngIf="!guardando" >Guardar</a>
+                        <a style="color:white" *ngIf="guardando" >Guardando</a>
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="center-align" *ngIf="guardando">
+                <div class="preloader-wrapper small active">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalmula" class="modal">
+    <div class="modal-content">
+        <div class="center-align">
+            <h5>Agregar Mulagua&nbsp;<small>{{monturasService.selectedCercado.nombre}}</small></h5>
+        </div>
+        <div>
+            <form (ngSubmit)="addMulaguas(mulaguaForm)" #mulaguaForm="ngForm">
+                <div class="input-field col s12">
+                    <input id="nombre" type="text" class="validate" name="nombre" #nombre="ngModel" [(ngModel)]="monturasService.selectedMontura.nombre" required>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="reproducciones" type="number" class="validate" name="reproducciones" #reproducciones="ngModel" [(ngModel)]="monturasService.selectedMontura.reproducciones" required>
+                    <label for="reproducciones">Reproducciones</label>
+                </div>
+                <input type="hidden" name="fecundada" #fecundada="ngModel" [(ngModel)]="fecundidae">
+                <div class="input-field col s12">
+                    <select class="icons" name="especie" #especie="ngModel" [(ngModel)]="monturasService.selectedMontura.especie" required>
+                        <option value="" disabled selected>Selecione una especie</option>
+                        <option [value]="mulagua.mulagua" *ngFor="let mulagua of mulaguasselect" [attr.data-icon]="mulagua.img"> 
+                            {{ mulagua.mulagua }} 
+                        </option>
+                    </select>
+                    <label>Especies</label>
+                </div>
+                <input type="hidden" name="img" #img="ngModel" [(ngModel)]="monturasService.selectedMontura.img" [value]="">
+                <input type="hidden" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="key$">
+                <div class="input-field col s12">
+                    <select name="propietario" #propietario="ngModel" [(ngModel)]="monturasService.selectedMontura.propietario" required>
+                        <option value="" disabled selected>Elija un propietario</option>
+                        <option [value]="k" *ngFor="let k of monturasService.usuarios | keys"> {{ monturasService.usuarios[k].nombre }} </option>
+                    </select>
+                    <label>Propietario</label>
+                </div>
+                <div class="center-align">
+                    <button [disabled]="!mulaguaForm.valid" type="submit" class="btn cyan darken-4 waves-effect waves-light" [disabled]="guardando">
+                        <a style="color:white" *ngIf="!guardando" >Guardar</a>
+                        <a style="color:white" *ngIf="guardando" >Guardando</a>
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="center-align" *ngIf="guardando">
+                <div class="preloader-wrapper small active">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalvuelo" class="modal">
+    <div class="modal-content">
+        <div class="center-align">
+            <h5>Agregar Vueloceronte&nbsp;<small>{{monturasService.selectedCercado.nombre}}</small></h5>
+        </div>
+        <div>
+            <form (ngSubmit)="addVuelocerontes(vueloceronteForm)" #vueloceronteForm="ngForm">
+                <div class="input-field col s12">
+                    <input id="nombre" type="text" class="validate" name="nombre" #nombre="ngModel" [(ngModel)]="monturasService.selectedMontura.nombre" required>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="reproducciones" type="number" class="validate" name="reproducciones" #reproducciones="ngModel" [(ngModel)]="monturasService.selectedMontura.reproducciones" required>
+                    <label for="reproducciones">Reproducciones</label>
+                </div>
+                <input type="hidden" name="fecundada" #fecundada="ngModel" [(ngModel)]="fecundidad">
+                <div class="input-field col s12">
+                    <select class="icons" name="especie" #especie="ngModel" [(ngModel)]="monturasService.selectedMontura.especie" required>
+                        <option value="" disabled selected>Selecione una especie</option>
+                        <option [value]="vueloceronte.vueloceronte" *ngFor="let vueloceronte of vuelocerontesselect" [attr.data-icon]="vueloceronte.img"> 
+                            {{ vueloceronte.vueloceronte }} 
+                        </option>
+                    </select>
+                    <label>Especies</label>
+                </div>
+                <input type="hidden" name="img" #img="ngModel" [(ngModel)]="monturasService.selectedMontura.img" [value]="">
+                <input type="hidden" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="key$">
+                <div class="input-field col s12">
+                    <select name="propietario" #propietario="ngModel" [(ngModel)]="monturasService.selectedMontura.propietario" required>
+                        <option value="" disabled selected>Elija un propietario</option>
+                        <option [value]="k" *ngFor="let k of monturasService.usuarios | keys"> {{ monturasService.usuarios[k].nombre }} </option>
+                    </select>
+                    <label>Propietario</label>
+                </div>
+                <div class="center-align">
+                    <button [disabled]="!vueloceronteForm.valid" type="submit" class="btn cyan darken-4 waves-effect waves-light" [disabled]="guardando">
+                        <a style="color:white" *ngIf="!guardando" >Guardar</a>
+                        <a style="color:white" *ngIf="guardando" >Guardando</a>
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="center-align" *ngIf="guardando">
+                <div class="preloader-wrapper small active">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

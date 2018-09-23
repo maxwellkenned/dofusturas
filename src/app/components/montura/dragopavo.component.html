@@ -1,0 +1,289 @@
+<div class="col s12 container" *ngIf="cargando" style="margin-top:30px">
+    <div class="col s4 offset-s4">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+</div>
+
+<div class="" *ngIf="!cargando" style="margin-top:10px">
+    <div class="col s3">
+        <div class="col s12">
+            <div class="card-panel cyan darken-4">
+                <div class="row">
+                    <div class="white-text">
+                        <div class="center-align">
+                            <img src="{{ monturasService.selectedMontura.img }}" alt="">
+                            <h5> {{ monturasService.selectedMontura.nombre }} </h5>
+                        </div>
+                        <div>
+                            <ul class="">
+                                <hr>
+                                <li class=""><b>Especie: </b>{{ monturasService.selectedMontura.especie }}</li>
+                                <hr>
+                                <li class="">
+                                    <b>Ubicación: </b>{{ cercado.ubicacion }}&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a class="btn-floating btn-small waves-effect waves-light green tooltipped" data-position="right" data-tooltip="Ver cercado" [routerLink]="['/cercado', monturasService.selectedMontura.ubicacion ]"><i class="fa fa-eye"></i></a>
+                                </li>
+                                <hr>
+                                <li class=""><b>Propietario: </b>{{ usuario.nombre }}&nbsp;{{ usuario.apellido }}</li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div class="center-align" style="margin-top:20px">
+                            <button class="btn red darken-3 waves-effect waves-light btn-small" (click)="borraDragopavo()">Eliminar</button>
+                        </div>
+                        <div class="center-align" *ngIf="eliminando" style="margin-top:20px">
+                            <div class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-red-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-panel cyan darken-4">
+                <div class="row">
+                    <div class="white-text">
+                        <div>
+                            <form (ngSubmit)="modificarDragopavo()" #fecundidadForm="ngForm">
+                                <div class="input-field col s12">
+                                    <small>Fecundada</small>
+                                    <select name="ubicacion" #ubicacion="ngModel" [(ngModel)]="monturasService.selectedMontura.ubicacion" required>
+                                                <option value="" disabled selected>Elija una ubicacion</option>
+                                                <option value="inventario"> Inventario </option>
+                                                <option [value]="k" *ngFor="let k of monturasService.cercados | keys "> {{monturasService.cercados[k].ubicacion}} </option>
+                                            </select>
+                                </div>
+                                <div class="input-field col s12">
+                                    <small>Fecundada</small>
+                                    <select id="fecundad" name="fecundada" #fecundada="ngModel" [(ngModel)]="monturasService.selectedMontura.fecundada" required>
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                                <div class="input-field col s12">
+                                    <small>Reproducciones</small>
+                                    <input id="reproducciones" type="number" name="reproducciones" #reproducciones="ngModel" [(ngModel)]="monturasService.selectedMontura.reproducciones" required>
+                                </div>
+                                <div class="col s12">
+                                    <div class="center-align">
+                                        <button [disabled]="!fecundidadForm.valid" type="submit" class="btn green darken-3 waves-effect waves-light btn-small" [disabled]="guardando">
+                                            <a style="color:white" *ngIf="!guardando">Guardar</a>
+                                            <a style="color:white" *ngIf="guardando">Guardando</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="center-align" *ngIf="guardando" style="margin-top:20px">
+                            <br>
+                            <div class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-green-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s9">
+        <div class="row">
+            <div class="col s12">
+                <div class="card-panel">
+                    <div class="row">
+                        <form>
+                            <div class="row">
+                                <div class="col s6">
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s6">
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s3">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    <div class="col s4 offset-s1">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s4 offset-s2">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s6">
+                                    <div class="col s4 offset-s1">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col s4 offset-s2">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    <div class="col s4 offset-s4">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s6">
+                                    <div class="col s4 offset-s4">
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose your option</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input id="pavo" type="hidden" class="validate" name="pavo" #pavo="ngModel" [(ngModel)]="key$" required>
+                                <div class="cyan darken-4 col s4 offset-s4 center-align">
+                                    <h6 style="margin-bottom: 15px;" class="white-text"> {{monturasService.selectedMontura.nombre}} </h6>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row" style="float: right; margin-right: 20px">
+                                <button class="btn green">Guardar parientes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

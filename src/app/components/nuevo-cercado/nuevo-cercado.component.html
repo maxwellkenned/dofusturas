@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="right">
+        <a [routerLink]="['/cercados']" class="btn red darken-4 waves-effect waves-light">Regresar</a>
+    </div>
+    <div class="center-align">
+        <h3>
+            Nuevo Cercado
+        </h3>
+    </div>
+
+    <div class="row">
+        <div class="center-align">
+            <div class="col s7 offset-s2">
+                <form (ngSubmit)="addCercado(cercadoForm)" #cercadoForm="ngForm">
+                    <div class="input-field col s12">
+                        <input id="nombre" type="text" class="validate" name="nombre" #nombre="ngModel" [(ngModel)]="monturasService.selectedCercado.nombre" required>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="ubicacion" type="text" class="validate" name="ubicacion" #ubicacion="ngModel" [(ngModel)]="monturasService.selectedCercado.ubicacion" required>
+                        <label for="ubicacion">Ubicación</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select name="tipo" #tipo="ngModel" [(ngModel)]="monturasService.selectedCercado.tipo" required>
+                          <option value="" disabled selected>Seleccione una  opción</option>
+                          <option value="gremio">Cercado de Gremio</option>
+                          <option value="Publico">Cercado Público</option>
+                        </select>
+                        <label>Tipo de Cercado</label>
+                    </div>
+                    <!-- <div class="input-field col s12">
+                        <input id="propietario" type="text" class="validate" name="propietario" #propietario="ngModel" [(ngModel)]="monturasService.selectedCercado.propietario" required>
+                        <label for="propietario">Propietario</label>
+                    </div> -->
+                    <button type="submit" class="btn cyan darken-4 waves-effect waves-light" [disabled]="guardando" [disabled]="!cercadoForm.valid">Guardar<i class="fa fa-refresh fa-spin" *ngIf="guardando" ></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

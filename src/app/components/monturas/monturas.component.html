@@ -1,0 +1,28 @@
+<div class="col s10 offset-s1">
+    <div class="center-align">
+        <h3>
+            Monturas
+        </h3>
+    </div>
+
+    <div class="row">
+        <div class="col s12 cyan darken-4">
+            <ul class="tabs cyan darken-4 tabs-transparent">
+                <li class="tab col s4" routerLinkActive="active">
+                    <a class="tab col" style="color: #fff " href="#tappavo" [routerLink]="['/monturas/dragopavos']"><b>Dragopavos</b></a>
+                </li>
+                <li class="tab col s4" routerLinkActive="active">
+                    <a class="tab col" style="color: #fff " href="#tapmula" [routerLink]="['/monturas/mulaguas']"><b>Mulaguas</b></a>
+                </li>
+                <li class="tab col s4" routerLinkActive="active">
+                    <a class="tab col" style="color: #fff " href="#tapvuelo" [routerLink]="['/monturas/vuelocerontes']"><b>Vuelocerontes</b></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12">
+
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<nav>
+    <div class="nav-wrapper cyan darken-4">
+        <div class="container">
+            <a [routerLink]="['/inicio']" class="brand-logo" *ngIf="monturasService.sesionactiva">
+                <!-- <img src="../../../assets/img/iconcercado.png" alt="" style="margin-top: 5px"> -->
+                DofusTuras
+            </a>
+            <a [routerLink]="['/login']" class="brand-logo" *ngIf="!monturasService.sesionactiva">
+                <!-- <img src="../../../assets/img/iconcercado.png" alt="" style="margin-top: 5px"> -->
+                DofusTuras
+            </a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa fa-navicon"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['/inicio']">Inicio</a></li>
+                <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['/cercados']">Cercados</a></li>
+                <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['/monturas/dragopavos']">Monturas</a></li>
+                <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['x']">Fecundadas</a></li>
+                <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['x']">Perfil</a></li>
+                <li routerLinkActive="active" *ngIf="!monturasService.sesionactiva"><a [routerLink]="['/login']">Iniciar sesión</a></li>
+                <li routerLinkActive="active" *ngIf="!monturasService.sesionactiva"><a [routerLink]="['/register']">Registrar</a></li>
+                <li routerLinkActive="active" *ngIf="monturasService.sesionactiva" (click)="tryLogout()"><a>Salir</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<ul id="slide-out" class="sidenav">
+    <li *ngIf="monturasService.sesionactiva">
+        <div class="user-view">
+            <div *ngFor="let k of monturasService.usuarios | keys">
+                <div class="background" *ngIf="monturasService.usuarios[k].uid == monturasService.uid">
+                    <img src="../../../assets/img/sidenav.jpg">
+                </div>
+                <a href="#name" class="white-text" *ngIf="monturasService.usuarios[k].uid == monturasService.uid">
+                    <img class="" src="../../../assets/img/perfil/{{monturasService.usuarios[k].img}}" height="100">
+                    <br>{{monturasService.usuarios[k].nombre}}
+                </a>
+                <a href="#email"><span class="white-text email">{{monturasService.usuarios[k].email}}</span></a>
+            </div>
+        </div>
+    </li>
+    <li *ngIf="!monturasService.sesionactiva">
+        <div class="user-view">
+            <div class="background">
+                <img src="../../../assets/img/sidenav.jpg">
+            </div>
+        </div>
+    </li>
+    <li class="center-align"><a class="subheader">Menú</a></li>
+    <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['/inicio']">Inicio</a></li>
+    <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['/cercados']">Cercados</a></li>
+    <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['/monturas/dragopavos']">Monturas</a></li>
+    <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['x']">Fecundadas</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li class="center-align"><a class="subheader">Perfil</a></li>
+    <li routerLinkActive="active" *ngIf="monturasService.sesionactiva"><a [routerLink]="['x']">Perfil</a></li>
+    <li routerLinkActive="active" *ngIf="!monturasService.sesionactiva"><a [routerLink]="['/login']">Iniciar sesión</a></li>
+    <li routerLinkActive="active" *ngIf="!monturasService.sesionactiva"><a [routerLink]="['/register']">Registrar</a></li>
+    <li routerLinkActive="active" *ngIf="monturasService.sesionactiva" (click)="tryLogout()"><a>Salir</a></li>
+</ul>

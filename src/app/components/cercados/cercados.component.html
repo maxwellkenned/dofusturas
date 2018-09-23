@@ -1,0 +1,54 @@
+<div class="col s10 offset-s1">
+    <div class="center-align">
+        <h3>
+            Cercados
+        </h3>
+    </div>
+    <div class="row">
+        <div class="input-field col s10">
+            <input id="buscar" type="text" class="validate">
+            <label for="buscar">Buscar Cercado</label>
+        </div>
+        <div class="input-field col s2">
+            <!-- <button class="btn col s12 cyan darken-4" [routerLink]="['/cercados/nuevo']">Nuevo Cercado</button> -->
+            <a class="waves-effect waves-light btn cyan darken-4" [routerLink]="['/cercados/nuevo']">Nuevo Cercado</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12" *ngIf="cargando">
+            <div class="col s4 offset-s4">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="col s4 offset-s4" *ngIf="eliminando">
+                <div class="progress red">
+                    <div class="indeterminate red lighten-5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12" *ngIf="monturasService.errorcercados">
+            <p>Error de conexion</p>
+        </div>
+        <div class="col s12 m3" *ngFor="let k of monturasService.cercados | keys">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../../../assets/img/cercado.png">
+                    <span class="card-title"> {{ monturasService.cercados[k].nombre }} </span>
+                </div>
+                <div class="card-content" style="height: 150px;">
+                    <p><b>Ubicación:</b> &nbsp; {{ monturasService.cercados[k].ubicacion }} </p>
+                    <p><b>Tipo:</b> &nbsp; {{ monturasService.cercados[k].tipo }} </p>
+                    <!-- <p><b>Propietario:</b> &nbsp; {{ monturasService.cercados[k].propietario }} </p> -->
+                </div>
+                <div class="card-action center-align">
+                    <a [routerLink]="['/cercado', k ]" class="btn cyan darken-4 waves-effect waves-light">
+                      Ir al cercado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
