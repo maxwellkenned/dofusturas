@@ -28,10 +28,10 @@
         <div class="user-view">
             <div *ngFor="let k of monturasService.usuarios | keys">
                 <div class="background" *ngIf="monturasService.usuarios[k].uid == monturasService.uid">
-                    <img src="../../../assets/img/sidenav.jpg">
+                    <img src="assets/img/sidenav.jpg">
                 </div>
                 <a href="#name" class="white-text" *ngIf="monturasService.usuarios[k].uid == monturasService.uid">
-                    <img class="" src="../../../assets/img/perfil/{{monturasService.usuarios[k].img}}" height="100">
+                    <img class="" src="assets/img/perfil/{{monturasService.usuarios[k].img}}" height="100">
                     <br>{{monturasService.usuarios[k].nombre}}
                 </a>
                 <a href="#email"><span class="white-text email">{{monturasService.usuarios[k].email}}</span></a>
@@ -41,7 +41,7 @@
     <li *ngIf="!monturasService.sesionactiva">
         <div class="user-view">
             <div class="background">
-                <img src="../../../assets/img/sidenav.jpg">
+                <img src="assets/img/sidenav.jpg">
             </div>
         </div>
     </li>

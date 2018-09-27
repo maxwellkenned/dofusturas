@@ -16,503 +16,503 @@ export class VuelocerontesComponent implements OnInit {
   vuelocerontes = [
     {
       "vueloceronte": "Almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Almendrado e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Almendrado y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Almendrado y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Almendrado y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Almendrado y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Almendrado y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Almendrado y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y ciruela",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y dorado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y esmeralda",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Amatista y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y esmeralda",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ciruela y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y ciruela",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y esmeralda",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y orquídeo ",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Dorada y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Ébano salvaje",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda y almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Esmeralda y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Índigo ",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Índigo salvaje",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Índigo y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y amatista",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y ciruela",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y dorado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y esmeralda",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y rubí",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Jade y zafiro",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Marfil e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Marfil y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Marfil y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Marfil y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Marfil y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Orquídeo e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Orquídeo salvaje",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Orquídeo y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Pelirrojo e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Pelirrojo y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Pelirrojo y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Pelirrojo y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Pelirrojo y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Pelirrojo y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Púrpura e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Púrpura salvaje",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Púrpura y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Púrpura y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y amatista",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y ciruela",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y dorado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y esmeralda",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Rubí y zafiro",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Turquesa e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Turquesa e ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Turquesa y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Turquesa y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro e índigo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y almendrado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y amatista",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y ciruela",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y dorado",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y ébano",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y esmeralda",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y marfil",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y orquídeo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y pelirrojo",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y púrpura",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
     {
       "vueloceronte": "Zafiro y turquesa",
-      img:"../../../assets/img/monturas/200.png"
+      img:"assets/img/monturas/200.png"
     },
   ];
   
@@ -523,7 +523,7 @@ export class VuelocerontesComponent implements OnInit {
   eliminando:boolean = false;
   cargando:boolean = false;
 
-  constructor(private monturasService: MonturasService, private router:Router) { }
+  constructor(public monturasService: MonturasService, private router:Router) { }
 
   ngOnInit() {
     this.loadScripts();
@@ -602,9 +602,9 @@ export class VuelocerontesComponent implements OnInit {
   // ---------- CARGAR SCRIPT ----------
   loadScripts() {
     const dynamicScripts = [
-      '../../../assets/libs/jquery/js/jquery.js',
-      '../../../assets/libs/materialize/js/materialize.min.js',
-      '../../../assets/libs/sidebar/js/sidebar.js'
+      'assets/libs/jquery/js/jquery.js',
+      'assets/libs/materialize/js/materialize.min.js',
+      'assets/libs/sidebar/js/sidebar.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');
@@ -618,7 +618,7 @@ export class VuelocerontesComponent implements OnInit {
 
   loadMaterialize() {
     const dynamicScripts = [
-      '../../../assets/libs/sidebar/js/sidebar.js'
+      'assets/libs/sidebar/js/sidebar.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');

@@ -23,47 +23,47 @@ export class RegisterComponent implements OnInit {
     {
       nombre: "Anutrof",
       img: "anu.png",
-      src: "../../../assets/img/perfil/anu.png"
+      src: "assets/img/perfil/anu.png"
     },
     {
       nombre: "Aniripsa",
       img: "eni.png",
-      src: "../../../assets/img/perfil/eni.png"
+      src: "assets/img/perfil/eni.png"
     },
     {
       nombre: "Feca",
       img: "feca.png",
-      src: "../../../assets/img/perfil/feca.png"
+      src: "assets/img/perfil/feca.png"
     },
     {
       nombre: "Hipermago",
       img: "hiper.png",
-      src: "../../../assets/img/perfil/hiper.png"
+      src: "assets/img/perfil/hiper.png"
     },
     {
       nombre: "Ocra",
       img: "ocra.png",
-      src: "../../../assets/img/perfil/ocra.png"
+      src: "assets/img/perfil/ocra.png"
     },
     {
       nombre: "Osamodas",
       img: "osa.png",
-      src: "../../../assets/img/perfil/osa.png"
+      src: "assets/img/perfil/osa.png"
     },
     {
       nombre: "Pandawa",
       img: "panda.png",
-      src: "../../../assets/img/perfil/eni.png"
+      src: "assets/img/perfil/eni.png"
     },
     {
       nombre: "Sacrógrito",
       img: "sacro.png",
-      src: "../../../assets/img/perfil/sacro.png"
+      src: "assets/img/perfil/sacro.png"
     },
     {
       nombre: "Sadidas",
       img: "sadi.png",
-      src: "../../../assets/img/perfil/sadi.png"
+      src: "assets/img/perfil/sadi.png"
     },
     {
       nombre: "Selatrop",
@@ -73,46 +73,46 @@ export class RegisterComponent implements OnInit {
     {
       nombre: "Sram",
       img: "sram.png",
-      src: "../../../assets/img/perfil/sram.png"
+      src: "assets/img/perfil/sram.png"
     },
     {
       nombre: "Steamer",
       img: "steam.png",
-      src: "../../../assets/img/perfil/steam.png"
+      src: "assets/img/perfil/steam.png"
     },
     {
       nombre: "Tymador",
       img: "tyma.png",
-      src: "../../../assets/img/perfil/tyma.png"
+      src: "assets/img/perfil/tyma.png"
     },
     {
       nombre: "Uginak",
       img: "ugi.png",
-      src: "../../../assets/img/perfil/ugi.png"
+      src: "assets/img/perfil/ugi.png"
     },
     {
       nombre: "Xelor",
       img: "xelor.png",
-      src: "../../../assets/img/perfil/xelor.png"
+      src: "assets/img/perfil/xelor.png"
     },
     {
       nombre: "Yopuka",
       img: "yop.png",
-      src: "../../../assets/img/perfil/yop.png"
+      src: "assets/img/perfil/yop.png"
     },
     {
       nombre: "Zobal",
       img: "zobal.png",
-      src: "../../../assets/img/perfil/zobal.png"
+      src: "assets/img/perfil/zobal.png"
     },
     {
       nombre: "Zurcarák",
       img: "zurka.png",
-      src: "../../../assets/img/perfil/zurka.png"
+      src: "assets/img/perfil/zurka.png"
     }
   ]
   
-  constructor( private monturasService: MonturasService, public afAuth: AngularFireAuth, private router:Router ) { }
+  constructor( public monturasService: MonturasService, public afAuth: AngularFireAuth, private router:Router ) { }
 
   ngOnInit() {
     this.loadMaterialize();
@@ -151,9 +151,9 @@ export class RegisterComponent implements OnInit {
 
   loadMaterialize() {
     const dynamicScripts = [
-      '../../../assets/libs/particles/particles.js',
-      '../../../assets/libs/particles/particulas.js',
-      '../../../assets/libs/sidebar/js/sidebar.js'
+      'assets/libs/particles/particles.js',
+      'assets/libs/particles/particulas.js',
+      'assets/libs/sidebar/js/sidebar.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     password: ""
   }
 
-  constructor( private monturasService: MonturasService, public afAuth: AngularFireAuth, private router:Router ) { }
+  constructor( public monturasService: MonturasService, public afAuth: AngularFireAuth, private router:Router ) { }
 
   ngOnInit() {
     this.loadMaterialize();
@@ -39,8 +39,8 @@ export class LoginComponent implements OnInit {
 
   loadMaterialize() {
     const dynamicScripts = [
-      '../../../assets/libs/particles/particles.js',
-      '../../../assets/libs/particles/particulas.js'
+      'assets/libs/particles/particles.js',
+      'assets/libs/particles/particulas.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');

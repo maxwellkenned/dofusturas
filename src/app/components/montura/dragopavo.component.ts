@@ -22,7 +22,7 @@ export class DragopavoComponent implements OnInit {
   guardando:boolean = false;
   eliminando:boolean = false;
 
-  constructor(private monturasService: MonturasService, private activatedRouted: ActivatedRoute, private router:Router) { }
+  constructor(public monturasService: MonturasService, private activatedRouted: ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
     this.loadScripts();
@@ -104,9 +104,9 @@ export class DragopavoComponent implements OnInit {
   // ---------- CARGAR SCRIPTS ----------
   loadScripts() {
     const dynamicScripts = [
-      '../../../assets/libs/jquery/js/jquery.js',
-      '../../../assets/libs/materialize/js/materialize.min.js',
-      '../../../assets/libs/sidebar/js/sidebar.js'
+      'assets/libs/jquery/js/jquery.js',
+      'assets/libs/materialize/js/materialize.min.js',
+      'assets/libs/sidebar/js/sidebar.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');
@@ -121,7 +121,7 @@ export class DragopavoComponent implements OnInit {
   // ---------- CARGAR MATERIALIZE ----------
   loadMaterialize() {
     const dynamicScripts = [
-      '../../../assets/libs/sidebar/js/sidebar.js'
+      'assets/libs/sidebar/js/sidebar.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');

@@ -10,7 +10,7 @@ import { Usuario } from '../../models/monturas';
 })
 export class NavComponent implements OnInit {
 
-  constructor( private monturasService: MonturasService, private router:Router ) { }
+  constructor( public monturasService: MonturasService, private router:Router ) { }
 
   ngOnInit() {
     this.getUsuarios();

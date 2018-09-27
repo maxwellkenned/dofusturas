@@ -13,7 +13,7 @@ export class CercadosComponent implements OnInit {
   cargando:boolean = true;
   eliminando:boolean = false;
 
-  constructor(private monturasService: MonturasService) { } //Si da un error colocar public
+  constructor(public monturasService: MonturasService) { } //Si da un error colocar public
 
   ngOnInit() {
     this.loadScripts();
@@ -31,9 +31,9 @@ export class CercadosComponent implements OnInit {
 
   loadScripts() {
     const dynamicScripts = [
-      '../../../assets/libs/jquery/js/jquery.js',
-      '../../../assets/libs/materialize/js/materialize.min.js',
-      '../../../assets/libs/sidebar/js/sidebar.js'
+      'assets/libs/jquery/js/jquery.js',
+      'assets/libs/materialize/js/materialize.min.js',
+      'assets/libs/sidebar/js/sidebar.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');

@@ -16,7 +16,7 @@ export class NuevoCercadoComponent implements OnInit {
   
   guardando = false;
 
-  constructor(private monturasService: MonturasService, private router:Router) { } //Si da error colocar el servicio public
+  constructor(public monturasService: MonturasService, private router:Router) { } //Si da error colocar el servicio public
 
   ngOnInit() {
     this.loadScripts();
@@ -39,9 +39,9 @@ export class NuevoCercadoComponent implements OnInit {
 
   loadScripts() {
     const dynamicScripts = [
-      '../../../assets/libs/jquery/js/jquery.js',
-      '../../../assets/libs/materialize/js/materialize.min.js',
-      '../../../assets/libs/sidebar/js/sidebar.js'
+      'assets/libs/jquery/js/jquery.js',
+      'assets/libs/materialize/js/materialize.min.js',
+      'assets/libs/sidebar/js/sidebar.js'
     ];
     for (let i = 0; i < dynamicScripts.length; i++) {
       const node = document.createElement('script');
